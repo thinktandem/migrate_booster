@@ -4,8 +4,3 @@ services:
     arguments: ['@plugin.manager.migration', '@date.formatter', '@entity_type.manager', '@keyvalue']
     tags:
       - { name: drush.command }
-
-  migrate_booster.commands:
-    class: \Drupal\migrate_booster\Commands\MigrateBoosterCommands
-    tags:
-      - { name: drush.command }

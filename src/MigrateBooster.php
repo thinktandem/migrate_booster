@@ -17,7 +17,6 @@ class MigrateBooster {
    * Reacts on HOOK_drush_init().
    *
    * Enables/disables booster depending on a drush command invoked.
-   *
    */
   public static function bootDrush(InputInterface $input, AnnotationData $annotationData) {
     if (in_array($annotationData['command'], static::getConfig('commands'))) {
@@ -84,7 +83,7 @@ class MigrateBooster {
     $modules = static::getConfig('modules');
     $disabled = [];
     // Disable by hook + module
-    if (in_array($hook, array_keys($hooks))) {
+    if (array_key_exists($hook, $hooks)) {
       $disabled = array_intersect_key($implementations, array_flip($hooks[$hook]));
     }
     // Disable by module
@@ -96,8 +95,12 @@ class MigrateBooster {
     });
   }
 
-  // Helper functions
-
+  /**
+   * Helper functions
+   *
+   * @param $key
+   * @return array
+   */
   protected static function getConfig($key) {
     if (!static::$config) {
       static::$config = \Drupal::config('migrate_booster.settings')->get();
@@ -105,9 +108,8 @@ class MigrateBooster {
     if ($key && isset(static::$config[$key])) {
       return static::$config[$key];
     }
-    else {
-      return [];
-    }
+
+    return [];
   }
 
 }
