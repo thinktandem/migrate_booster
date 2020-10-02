@@ -1,0 +1,15 @@
+<?php
+
+use Drupal\migrate_booster\MigrateBooster;
+
+/** @noinspection PhpInconsistentReturnPointsInspection */
+
+/**
+ * Implements hook_module_implements_alter().
+ * @param $implementations
+ * @param $hook
+ * @return null
+ */
+function migrate_booster_module_implements_alter(&$implementations, $hook) {
+  MigrateBooster::alter($implementations, $hook);
+}

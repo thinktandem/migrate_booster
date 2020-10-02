@@ -1,0 +1,5 @@
+services:
+  migrate_booster.hooks_enabler_subscriber:
+    class: Drupal\migrate_booster\HooksEnablerSubscriber
+    tags:
+      - { name: 'event_subscriber' }

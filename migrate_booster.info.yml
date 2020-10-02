@@ -1,0 +1,7 @@
+name: Migrate booster
+type: module
+description: Hooks disabler
+core: 8.x
+package: Migration
+dependencies:
+  - migrate

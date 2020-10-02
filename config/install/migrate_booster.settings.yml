@@ -1,0 +1,7 @@
+commands: [migrate-import, migrate-rollback]
+# This is an example. Use settings.php to disable your own hooks
+hooks:
+  entity_insert: [ pathauto ]
+  entity_delete: [ pathauto ]
+modules:
+  - pathauto
