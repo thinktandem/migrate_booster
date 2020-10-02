@@ -1,3 +1,5 @@
+Copied from https://www.drupal.org/sandbox/onkeltem/2828817 and added the patch from https://www.drupal.org/project/2828817/issues/2919993
+
 # About
 
 On Drupal 7 we could disable hooks while running migrations:
