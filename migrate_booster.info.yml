@@ -2,6 +2,7 @@ name: Migrate booster
 type: module
 description: Hooks disabler
 core: 8.x
+core_version_requirement: ^8 || ^9
 package: Migration
 dependencies:
   - migrate
